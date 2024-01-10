@@ -1,9 +1,9 @@
 package springproject.teamandplayers.domaine;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Data;
+
+import java.util.List;
 
 @Entity
 @Data
@@ -13,4 +13,7 @@ public class Team {
     @GeneratedValue
     private Long t_id;
     private String t_name;
+
+    @OneToMany(mappedBy = "team")
+    private List<Player> players;
 }

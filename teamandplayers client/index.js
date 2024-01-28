@@ -142,7 +142,7 @@ async function main() {
   const updatedPlayer = await updatePlayer(createdPlayer.p_id, {
     p_name: "Updated Player",
   });
-  await deletePlayer(updatedPlayer);
+  await deletePlayer(updatedPlayer.p_id);
   await getAllPlayers();
 }
 
